@@ -242,7 +242,7 @@ if params['action'] == 'search':
   Search(item)
 
 elif params['action'] == 'manualsearch':
-    item = parseSearchString(params['searchstring'])
+    item = parseSearchString(params['searchstring'].lower())
     if item:
         langstring = urllib.unquote(params['languages']).decode('utf-8')
         item['3let_language'] = [xbmc.convertLanguage(lang,xbmc.ISO_639_2) for lang in langstring.split(",")]
